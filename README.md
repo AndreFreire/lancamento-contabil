@@ -5,7 +5,7 @@
 * Maven 3+
 * Java 8+
 
-## Compilação, testes e empacotamento:
+## Compilação, testes, cobertura de código e empacotamento:
 
 `mvn clean verify package`
 
