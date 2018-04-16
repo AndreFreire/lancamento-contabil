@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "e5bad3a7-4559-4a51-813e-64a22c201a1b",
+		"name": "Lançamento Contábil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[POST] contas-contabeis",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"numero\": 100010,\n\t\"descricao\": \"Conta do Darth Vader\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/contas-contabeis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contas-contabeis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] lancamentos-contabeis",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"contaContabil\": 100010,\n\t\"data\": 20180415,\n\t\"valor\": 1235.50\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/lancamentos-contabeis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos-contabeis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] lancamentos-contabeis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"contaContabil\": 100010,\n\t\"data\": 20180415,\n\t\"valor\": 1235.50\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/lancamentos-contabeis/?contaContabil=100010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos-contabeis",
+						""
+					],
+					"query": [
+						{
+							"key": "contaContabil",
+							"value": "100010"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] lancamentos-contabeis/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/lancamentos-contabeis/5ad4066840506f091713f2b3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos-contabeis",
+						"5ad4066840506f091713f2b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/lancamentos-contabeis/_stats?contaContabil=100010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos-contabeis",
+						"_stats"
+					],
+					"query": [
+						{
+							"key": "contaContabil",
+							"value": "100010"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
